@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     registrationForm.addEventListener('submit', async (event) => {
         event.preventDefault();
+       
 
         const formData = new FormData(registrationForm);
         const requestBody = Object.fromEntries(formData);
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const data = await response.json();
             displayConfirmation(data);
+            document.getElementById('registrationForm').style.display ="none";
         } catch (error) {
             console.error('Error:', error);
             // Handle error display or logging
